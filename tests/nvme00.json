@@ -1,0 +1,111 @@
+{
+  "json_format_version": [
+    1,
+    0
+  ],
+  "smartctl": {
+    "version": [
+      7,
+      2
+    ],
+    "svn_revision": "5155",
+    "platform_info": "x86_64-linux-5.13.9-arch1-1",
+    "build_info": "(local build)",
+    "argv": [
+      "smartctl",
+      "-a",
+      "-j",
+      "/dev/nvme0n1"
+    ],
+    "exit_status": 0
+  },
+  "device": {
+    "name": "/dev/nvme0n1",
+    "info_name": "/dev/nvme0n1",
+    "type": "nvme",
+    "protocol": "NVMe"
+  },
+  "model_name": "Samsung SSD 970 EVO Plus 1TB",
+  "serial_number": "S4EWNX0NB43752H",
+  "firmware_version": "2B2QEXM7",
+  "nvme_pci_vendor": {
+    "id": 5197,
+    "subsystem_id": 5197
+  },
+  "nvme_ieee_oui_identifier": 9528,
+  "nvme_total_capacity": 1000204886016,
+  "nvme_unallocated_capacity": 0,
+  "nvme_controller_id": 4,
+  "nvme_version": {
+    "string": "1.3",
+    "value": 66304
+  },
+  "nvme_number_of_namespaces": 1,
+  "nvme_namespaces": [
+    {
+      "id": 1,
+      "size": {
+        "blocks": 1953525168,
+        "bytes": 1000204886016
+      },
+      "capacity": {
+        "blocks": 1953525168,
+        "bytes": 1000204886016
+      },
+      "utilization": {
+        "blocks": 1277450080,
+        "bytes": 654054440960
+      },
+      "formatted_lba_size": 512,
+      "eui64": {
+        "oui": 9528,
+        "ext_id": 390870446543
+      }
+    }
+  ],
+  "user_capacity": {
+    "blocks": 1953525168,
+    "bytes": 1000204886016
+  },
+  "logical_block_size": 512,
+  "local_time": {
+    "time_t": 1628586386,
+    "asctime": "Tue Aug 10 11:06:26 2021 CEST"
+  },
+  "smart_status": {
+    "passed": true,
+    "nvme": {
+      "value": 0
+    }
+  },
+  "nvme_smart_health_information_log": {
+    "critical_warning": 0,
+    "temperature": 47,
+    "available_spare": 100,
+    "available_spare_threshold": 10,
+    "percentage_used": 0,
+    "data_units_read": 13284456,
+    "data_units_written": 17319672,
+    "host_reads": 169374614,
+    "host_writes": 224064335,
+    "controller_busy_time": 609,
+    "power_cycles": 391,
+    "power_on_hours": 1010,
+    "unsafe_shutdowns": 21,
+    "media_errors": 0,
+    "num_err_log_entries": 1288,
+    "warning_temp_time": 0,
+    "critical_comp_time": 0,
+    "temperature_sensors": [
+      47,
+      47
+    ]
+  },
+  "temperature": {
+    "current": 47
+  },
+  "power_cycle_count": 391,
+  "power_on_time": {
+    "hours": 1010
+  }
+}
