@@ -11,10 +11,10 @@ An exporter for the disk temperature reported by `smartctl`, written in Rust.
 [![release](https://img.shields.io/github/release/MindFlavor/prometheus_smartctl_temperature_exporter.svg)](https://github.com/MindFlavor/prometheus_smartctl_temperature_exporter/tree/1.0.1)
 [![tag](https://img.shields.io/github/tag/mindflavor/prometheus_smartctl_temperature_exporter.svg)](https://github.com/MindFlavor/prometheus_smartctl_temperature_exporter/tree/1.0.1)
 
-[![Rust build](https://github.com/mindflavor/prometheus_smartctl_temperature_exporter/workflows/Rust/badge.svg)](https://github.com/mindflavor/prometheus_smartctl_temperature_exporter/actions?query=workflow%3ARust)
+[![Rust build](https://github.com/mindflavor/prometheus_smartctl_temperature_exporter/workflows/Lints/badge.svg)](https://github.com/mindflavor/prometheus_smartctl_temperature_exporter/actions?query=workflow%3ALints+branch%3Amain++)
 [![commitssince](https://img.shields.io/github/commits-since/mindflavor/prometheus_smartctl_temperature_exporter/1.0.1.svg)](https://img.shields.io/github/commits-since/mindflavor/prometheus_smartctl_temperature_exporter/1.0.1.svg)
 
-![Docker build](https://github.com/MindFlavor/prometheus_smartctl_temperature_exporter/workflows/Buildx%20latest/badge.svg)
+![Docker build](https://github.com/MindFlavor/prometheus_smartctl_temperature_exporter/workflows/CI/badge.svg)
 
 [![dockeri.co](https://dockeri.co/image/mindflavor/prometheus-smartctl-temperature-exporter)](https://hub.docker.com/r/mindflavor/prometheus-smartctl-temperature-exporter)
 
