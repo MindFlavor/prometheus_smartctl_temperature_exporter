@@ -1,22 +1,8 @@
 name: CI
 on:
-  push:
-    paths:
-      - .github/workflows/docker.yml
-      - src/**
-      - .dockerignore
-      - Cargo.lock
-      - Cargo.toml
-      - Dockerfile
-  pull_request:
-    paths:
-      - .github/workflows/docker.yml
-      - src/**
-      - .dockerignore
-      - Cargo.lock
-      - Cargo.toml
-      - Dockerfile
-
+  release:
+    types: 
+      - created
 jobs:
   verify:
     runs-on: ubuntu-latest
