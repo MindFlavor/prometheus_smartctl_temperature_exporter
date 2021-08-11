@@ -28,6 +28,7 @@ impl BlockDevice {
     pub fn signature(&self) -> String {
         match (&self.model, &self.serial) {
             (Some(model), Some(serial)) => format!("{}_{}", model, serial),
+            (Some(model), None) => model.to_string(),
             _ => self.name.to_owned(),
         }
     }
@@ -44,7 +45,13 @@ pub fn get_block_devices() -> Result<Vec<BlockDevice>, Box<dyn Error + Send + Sy
     let output_stderr_str = String::from_utf8(output.stderr)?;
     trace!("output_stderr_str == {}", output_stderr_str,);
 
-    let lsblk: Lsblk = serde_json::from_str(&output_stdout_str)?;
+    let mut lsblk: Lsblk = serde_json::from_str(&output_stdout_str)?;
+
+    for mut block_device in lsblk.blockdevices.iter_mut() {
+        block_device.model = block_device.model.as_ref().map(|s| s.trim().to_owned());
+        block_device.serial = block_device.serial.as_ref().map(|s| s.trim().to_owned());
+        block_device.wwn = block_device.wwn.as_ref().map(|s| s.trim().to_owned());
+    }
 
     Ok(lsblk.blockdevices)
 }
