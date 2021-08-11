@@ -62,7 +62,7 @@ async fn perform_request(
 
         pm.render_and_append_instance(
             &PrometheusInstance::new()
-                .with_label("device", &format!("{}", block_device.signature()) as &str)
+                .with_label("device", &block_device.signature().to_string() as &str)
                 .with_value(temperature),
         );
 
@@ -97,7 +97,7 @@ fn process_device(
 
     let output_json: Value = serde_json::from_str(&output_stdout_str)?;
 
-    match process_rules(&block_device, &output_json) {
+    match process_rules(block_device, &output_json) {
         Some(temperature) => Ok(temperature),
         None => Err(Box::new(ExporterError::UnsupportedDevice(
             block_device.signature(),
@@ -133,7 +133,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
         .arg(
             Arg::with_name("prepend_sudo")
                 .short("a")
-                .help("Prepend sudo to the wg show commands")
+                .help("Prepend sudo to the smartctl commands")
                 .takes_value(false),
         )
         .arg(
@@ -168,7 +168,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
     info!("using options: {:?}", options);
 
     let bind = matches.value_of("port").unwrap();
-    let bind = (&bind).parse::<u16>().expect("port must be a valid number");
+    let bind = bind.parse::<u16>().expect("port must be a valid number");
     let ip = matches.value_of("addr").unwrap().parse::<IpAddr>().unwrap();
     let addr = (ip, bind).into();
 
