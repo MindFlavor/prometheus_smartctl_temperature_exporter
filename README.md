@@ -8,11 +8,11 @@ An exporter for the disk temperature reported by `smartctl`, written in Rust.
 
 [![Crate](https://img.shields.io/crates/v/prometheus_smartctl_temperature_exporter.svg)](https://crates.io/crates/prometheus_smartctl_temperature_exporter) [![cratedown](https://img.shields.io/crates/d/prometheus_smartctl_temperature_exporter.svg)](https://crates.io/crates/prometheus_smartctl_temperature_exporter) [![cratelastdown](https://img.shields.io/crates/dv/prometheus_smartctl_temperature_exporter.svg)](https://crates.io/crates/prometheus_smartctl_temperature_exporter)
 
-[![release](https://img.shields.io/github/release/MindFlavor/prometheus_smartctl_temperature_exporter.svg)](https://github.com/MindFlavor/prometheus_smartctl_temperature_exporter/tree/1.0.0)
-[![tag](https://img.shields.io/github/tag/mindflavor/prometheus_smartctl_temperature_exporter.svg)](https://github.com/MindFlavor/prometheus_smartctl_temperature_exporter/tree/1.0.0)
+[![release](https://img.shields.io/github/release/MindFlavor/prometheus_smartctl_temperature_exporter.svg)](https://github.com/MindFlavor/prometheus_smartctl_temperature_exporter/tree/1.0.1)
+[![tag](https://img.shields.io/github/tag/mindflavor/prometheus_smartctl_temperature_exporter.svg)](https://github.com/MindFlavor/prometheus_smartctl_temperature_exporter/tree/1.0.1)
 
 [![Rust build](https://github.com/mindflavor/prometheus_smartctl_temperature_exporter/workflows/Rust/badge.svg)](https://github.com/mindflavor/prometheus_smartctl_temperature_exporter/actions?query=workflow%3ARust)
-[![commitssince](https://img.shields.io/github/commits-since/mindflavor/prometheus_smartctl_temperature_exporter/1.0.0.svg)](https://img.shields.io/github/commits-since/mindflavor/prometheus_smartctl_temperature_exporter/1.0.0.svg)
+[![commitssince](https://img.shields.io/github/commits-since/mindflavor/prometheus_smartctl_temperature_exporter/1.0.1.svg)](https://img.shields.io/github/commits-since/mindflavor/prometheus_smartctl_temperature_exporter/1.0.1.svg)
 
 ![Docker build](https://github.com/MindFlavor/prometheus_smartctl_temperature_exporter/workflows/Buildx%20latest/badge.svg)
 
