@@ -509,7 +509,7 @@ dependencies = [
 
 [[package]]
 name = "prometheus_smartctl_temperature_exporter"
-version = "1.0.0"
+version = "1.0.1"
 dependencies = [
  "clap",
  "env_logger 0.8.4",
