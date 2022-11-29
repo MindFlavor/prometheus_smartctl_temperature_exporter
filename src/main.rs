@@ -79,12 +79,14 @@ fn process_device(
     let output = if options.prepend_sudo {
         Command::new("sudo")
             .arg("smartctl")
+            .arg("-n").arg("standby")
             .arg("-a")
             .arg("-j")
             .arg(format!("/dev/{}", block_device.name))
             .output()?
     } else {
         Command::new("smartctl")
+            .arg("-n").arg("standby")
             .arg("-a")
             .arg("-j")
             .arg(format!("/dev/{}", block_device.name))
