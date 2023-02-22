@@ -14,7 +14,7 @@ impl Options {
         let exclude_regexes: Result<Vec<_>, _> = matches
             .values_of("exclude_regexes")
             .unwrap_or_default()
-            .map(|s| Regex::new(s))
+            .map(Regex::new)
             .collect();
 
         let options = Options {
