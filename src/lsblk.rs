@@ -47,7 +47,7 @@ pub fn get_block_devices() -> Result<Vec<BlockDevice>, Box<dyn Error + Send + Sy
 
     let mut lsblk: Lsblk = serde_json::from_str(&output_stdout_str)?;
 
-    for mut block_device in lsblk.blockdevices.iter_mut() {
+    for block_device in lsblk.blockdevices.iter_mut() {
         block_device.model = block_device.model.as_ref().map(|s| s.trim().to_owned());
         block_device.serial = block_device.serial.as_ref().map(|s| s.trim().to_owned());
         block_device.wwn = block_device.wwn.as_ref().map(|s| s.trim().to_owned());

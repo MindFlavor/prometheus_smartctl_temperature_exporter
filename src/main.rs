@@ -2,11 +2,12 @@
 use clap::{crate_authors, crate_name, crate_version, Arg};
 use hyper::{Body, Request};
 use log::{error, info, trace, warn};
+use prometheus_exporter_base::prelude::ServerOptions;
 use std::env;
 mod options;
 use options::Options;
 use prometheus_exporter_base::{render_prometheus, PrometheusInstance, PrometheusMetric};
-use std::net::IpAddr;
+use std::net::{IpAddr, SocketAddr};
 use std::process::Command;
 mod rule_engine;
 pub use rule_engine::*;
@@ -174,11 +175,16 @@ async fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
     let bind = matches.value_of("port").unwrap();
     let bind = bind.parse::<u16>().expect("port must be a valid number");
     let ip = matches.value_of("addr").unwrap().parse::<IpAddr>().unwrap();
-    let addr = (ip, bind).into();
+
+    let addr: SocketAddr = (ip, bind).into();
+    let server_options = ServerOptions {
+        addr,
+        authorization: prometheus_exporter_base::prelude::Authorization::None,
+    };
 
     info!("starting exporter on http://{}/metrics", addr);
 
-    render_prometheus(addr, options, |request, options| {
+    render_prometheus(server_options, options, |request, options| {
         Box::pin(perform_request(request, options))
     })
     .await;

@@ -1,9 +1,9 @@
 [package]
 name = "prometheus_smartctl_temperature_exporter"
-version = "1.1.0"
+version = "1.1.1"
 authors                  = ["Francesco Cogno <francesco.cogno@outlook.com>"]
 description              = "Prometheus smartctl temperature exporter"
-edition = "2018"
+edition = "2021"
 
 readme                   = "README.md"
 license                  = "MIT"
